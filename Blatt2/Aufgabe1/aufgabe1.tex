@@ -1,0 +1,113 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[10pt]{article} % use larger type; default would be 10pt
+\usepackage{helvet} 
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%% PAGE DIMENSIONS
+\usepackage{geometry} % to change the page dimensions
+\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margin=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%% END Article customizations
+\numberwithin{equation}{section}
+%% Absolute Value, Norm Graphics
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+%% Absolute End
+
+%%Definitionen und Abkürzungen
+\newcommand{\QQ}{{\mathbb Q}}
+\newcommand{\RR}{{\mathbb R}}
+\newcommand{\NN}{{\mathbb N}}
+\newcommand{\ZZ}{{\mathbb Z}}
+\newcommand{\ST}{{\mathcal {S}}}
+\newcommand{\TT}{{\mathcal T}}
+\newcommand{\OT}{{\mathcal {O}}}
+\newcommand{\OL}{\overline}
+\newcommand{\gdw}{\Longleftrightarrow}
+\newcommand{\bdp}{\frac B {\Delta p}}
+\newcommand{\PI}{\mathcal{P}}
+\newcommand{\ic}{$IC_B$}
+\newcommand{\ir}{$IR_L$}
+% \setcounter{subsection}{+1}
+
+\title{ ADIP Ü2 A1 }
+
+\author{Christoph Schwerdtfeger}
+ 
+\begin{document}
+\maketitle
+\section{Aufgabe 1}
+Output des Programms:
+\texttt{./aufgabe1 \\
+Beispiel 1: 35 + 85 = 120\\
+Beispiel 2: 85 + 85 = -86\\
+}
+Während das erste Beispiel das korrekte Ergebnis ausgibt, ist das Ergebnis des zweiten Beispiels falsch (im Sinne normaler Arithmetik). Dies liegt daran, dass die Variablen \texttt{x1,x2,result} als \texttt{char} initialisiert wurden und deshalb nur eine Wortlänge von einem Byte haben (und deshalb im Zweierkomplement von -128 bis 127 reichen können). 85 entspricht im Zweierkomplement 01010101, deshalb ist 01010101+01010101=110101010 - die erste Stelle wird nicht mehr ausgewertet und das Ergebnis ist 10101010, -86 in Dezimalschreibweise.
+\section{Aufgabe 2}
+Das erste Verfahren braucht 16 Multiplikationsschritte (abstrahiert von den Fallunterscheidungen zuvor).
+\\Das zweite Verfahren braucht 4 Schritte: Im Exponenten von 17 auf 8, dann 4,2,1.\\
+Beim Exponenten 17 ist der Unterschied nicht so arg groß, weil ja noch die Manipulation der Exponenten und die Modulo-Ifs durchgeführt bzw. ausgewertet werden müssen. Bei größeren Exponenten ist der Unterschied erheblich (linear vs log).
+
+\section{Aufgabe 3}
+Die längste Collatzfolge der Zahlen von 1 bis 1000 wird von der 871 erzeugt, sie braucht 171 Schritte. Code beigefügt.
+
+
+
+\end{document}
