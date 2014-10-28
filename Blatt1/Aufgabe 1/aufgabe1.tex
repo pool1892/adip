@@ -1,0 +1,40 @@
+\documentclass{article}
+\def\datum{\today}
+
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb, amsthm}
+
+\title{1. \"Ubungsblatt}
+\author{}
+
+\begin{document}
+\maketitle
+
+\textbf{Aufgabe 1:}\\
+
+Ein- und Ausgabespezifikation:
+\begin{itemize}
+	\item Input: $i \in\mathbb{N}$
+	\item Output: n-Tupel $(x_1,\dots,x_n)$, mit $x\in\mathbb{N}$
+\end{itemize}
+
+Algorithmus:
+\begin{itemize}
+	\item[1.] Erstelle $P$ (Menge aller Primzahlen)
+	\item[2.] Prüfe $i\in P$
+	\begin{itemize}
+		\item[i.] $i\in P$, f\"uge i zu Tupel hinzu, dann Schritt 5
+		\item[ii.] $i\notin P$, gehe zu Schritt 3
+	\end{itemize}
+	\item[3.] Teile $i$ durch das kleinste Element $p$ von $P$
+	\begin{itemize}
+		\item[i.] $i\ mod\ p=0$, f\"uge p zum Tupel hinzu, gehe zu Schritt 4
+		\item[ii.] $i\ mod\ p\neq 0$, entferne $p$ von $P$, gehe zu Schritt 4
+	\end{itemize}
+	\item[4.] Wiederhole Schritt 3 bis $P={\emptyset}$, dann Schritt 5
+	\item[5.] Ausgabe des Tupels
+\end{itemize}
+\end{document}
