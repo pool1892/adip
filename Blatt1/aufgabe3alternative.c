@@ -8,7 +8,7 @@ int main()
 	label1: printf("Welche Zahl soll überprüft werden, ob es sich bei ihr um eine Primzahl handelt?\n->");
 	scanf("%d", &input);
 	if(input<=0){printf("%d gehört nicht zu den natürlichen Zahlen.\n", input); goto label1;}
-	for (i=2; i<(int)(sqrt(input)); i++)
+	for (i=2; i<(int)(sqrt(input))+1; i++)
 	{
 		if(input%i==0){var=1; break;}
 		else{var=0;}
