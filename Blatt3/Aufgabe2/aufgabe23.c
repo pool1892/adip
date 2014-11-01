@@ -18,8 +18,8 @@ int main()
 { printf("Für welche Zahl solldie Anzahl der kleineren defizienten Zahlen berechnet werden?\n");
 int input=0;
  scanf("%d", &input);
-int summe=5;
- for (int i=5; i<input; i++){
+int summe=1;
+ for (int i=1; i<input; i++){
 
 
  if (checkperfect(i)==0) {summe++;
