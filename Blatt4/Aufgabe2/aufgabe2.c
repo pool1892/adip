@@ -20,7 +20,8 @@ printf("Es lassen sich %lld Items auf %lld Weisen aus %lld Zahlen ziehen \n",k, 
 
 
 long long int fakultaet(long long a){
-if (a==1) {return a;}
+if (a==1) {return a;}     
+//if(a==1 || a==0) {return 1;} sicherer, da biko(0,0) aufgerufen werden darf => Aufruf fakultaet(0)
 else {a=a*fakultaet(a-1);
 return a;}
 }
