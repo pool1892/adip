@@ -1,0 +1,92 @@
+
+#include <stdio.h>
+void fibonacci();
+void parameter();
+void structure();
+long fib_rec(long);
+int prog52();
+
+int main(){
+int auswahl=0;
+while(1){
+auswahl=0;
+
+printf("Welche Aufgabe soll ausgeführt werden?\n1: Fibonacci\n2: Parameterübergabe\n3: Structs\n0: Beenden\n");
+scanf("%d", &auswahl);
+
+
+if(auswahl==0) {printf("\n");break;}
+else if (auswahl==1) {fibonacci();printf("\n");}
+else if (auswahl==2){parameter();printf("\n");}
+else if (auswahl==3){structure();printf("\n");}
+else {printf("Diese Eingabe entspricht keiner Zahl.\n\n");}
+
+
+
+}
+return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////
+////////////////////////////////   Aufgaben   ////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+// Blatt 5
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 1
+void fibonacci(){
+printf("\nBerechne Fibnoacci-Zahl\n");
+int zahl=0;
+	printf("Für welche Zahl soll die Fibonacci-Nummer ausgerechnet werden?\n");
+	scanf("%d", &zahl);
+
+printf("\nDie Fibonacci-Nummer von %d ist %ld.\n\n", zahl, fib_rec(zahl));
+
+}
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 2
+void parameter(){
+prog52();
+
+
+}
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 3
+void structure(){
+printf("Test3\n");
+
+}
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////   Hilfsfunktionen   ////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////
+// Blatt 5
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 1
+long fib_rec(long n){
+if (n==0) return 0;
+if (n==1) return 1;
+else return (fib_rec(n-1)+fib_rec(n-2));
+}
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 2
+void cbR(int *x) {
+printf("Ergebnis 1: %d.\n", *x);
+(*x) += 12;
+printf("Ergebnis 2: %d.\n", *x);
+}
+void cbV(int x) {
+printf("Ergebnis 4: %d. \n", x);
+x += 12;
+printf("Ergebnis 5: %d.\n", x);
+}
+int prog52() {
+int a=10;
+cbR(&a);
+printf("Ergebnis 3: %d.\n", a);
+cbV(a);
+printf("Ergebnis 6: %d.\n", a);
+return 0; }
