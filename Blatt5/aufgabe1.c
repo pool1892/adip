@@ -90,3 +90,10 @@ printf("Ergebnis 3: %d.\n", a);
 cbV(a);
 printf("Ergebnis 6: %d.\n", a);
 return 0; }
+//////////////////////////////////////////////////////////////////////////////
+// Aufgabe 3
+void structure(){
+
+
+	
+}
