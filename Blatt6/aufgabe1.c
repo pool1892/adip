@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+typedef struct DoubleNode DoubleNode;
+
 DoubleNode *insertFirst(DoubleNode *head, double d);
 void printList(DoubleNode *head);
 DoubleNode *insertLast(DoubleNode *head, double d);
@@ -7,14 +9,14 @@ DoubleNode *reverseDoubleListCon(DoubleNode *head);
 DoubleNode *reverseDoubleList(DoubleNode *head);
 
 //Aufgabe 1b)a)
-typedef struct DoubleNode{
+DoubleNode{
 	DoubleNode *next;
 	double value;
-}DoubleNode;
+};
 
 //Aufgabe 1b)b)
 DoubleNode *insertFirst(DoubleNode *head, double d){
-	DoubleNode *tmp;
+	struct DoubleNode *tmp;
 	tmp	= malloc(sizeof(DoubleNode));
 	tmp->value = d;
 	tmp->next = head;
