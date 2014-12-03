@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+///fuer Aufgabenteil (a):
+///dort steht hinterher als Output: 
+/// (11 7 3)
+/// (14 5 11 7 3)
 typedef struct DoubleNode DoubleNode;
 
 DoubleNode *insertFirst(DoubleNode *head, double d);
