@@ -74,21 +74,26 @@ else return (fib_rec(n-1)+fib_rec(n-2));
 //////////////////////////////////////////////////////////////////////////////
 // Aufgabe 2
 void cbR(int *x) {
-printf("Ergebnis 1: %d.\n", *x); //Schreib x (mit pointer *x) hin
-(*x) += 12; //+= 12 auf den wert, der in x steht
-printf("Ergebnis 2: %d.\n", *x); //schreib den wert x hin, hat sich geaendert
+printf("Ergebnis 1: %d.\n", *x);
+(*x) += 12;
+printf("Ergebnis 2: %d.\n", *x);
 }
 void cbV(int x) {
-printf("Ergebnis 4: %d. \n", x); //schreib x hin
-x += 12; //addiere 12 zur temporaeren var x
-printf("Ergebnis 5: %d.\n", x); schreib wieder x hin
+printf("Ergebnis 4: %d. \n", x);
+x += 12;
+printf("Ergebnis 5: %d.\n", x);
 }
 int prog52() {
-int a=10; // a ist 10
-cbR(&a);//rufe cbr mit der adresse von a auf
-printf("Ergebnis 3: %d.\n", a); //nach dem Aufruf von cbR hat a sich geandert, weil *x+=12
+int a=10;
+cbR(&a);
+printf("Ergebnis 3: %d.\n", a);
 cbV(a);
-printf("Ergebnis 6: %d.\n", a); //hier hat sich nichts geaendert, weil cbV eine temporaere Kopie von a erstellt hat
+printf("Ergebnis 6: %d.\n", a);
 return 0; }
 //////////////////////////////////////////////////////////////////////////////
 // Aufgabe 3
+void structure(){
+
+
+	
+}

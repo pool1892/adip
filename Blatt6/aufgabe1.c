@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-<<<<<<< Updated upstream
 typedef struct DoubleNode DoubleNode;
 
 DoubleNode *insertFirst(DoubleNode *head, double d);
@@ -20,27 +19,10 @@ DoubleNode *insertFirst(DoubleNode *head, double d){
 	struct DoubleNode *tmp;
 	tmp	= malloc(sizeof(DoubleNode));
 	tmp->value = d;
-=======
-
-///fuer Aufgabenteil (a):
-///dort steht hinterher als Output: 
-/// (11 7 3)
-/// (14 5 11 7 3)
-
-typedef struct DoubleNode { struct DoubleNode *next; double data;
-} DoubleNode;
-
-
-DoubleNode * insertFirst( DoubleNode *head, double d){ 
-	DoubleNode *tmp;
-	tmp= malloc(sizeof(DoubleNode));
-	tmp->data = d;
->>>>>>> Stashed changes
 	tmp->next = head;
 	return tmp;
 }
 
-<<<<<<< Updated upstream
 //Aufgabe 1b)c)
 void printList(DoubleNode *head){
 	DoubleNode *cursor;
@@ -101,81 +83,5 @@ DoubleNode *reverseDoubleList(DoubleNode *head){
 
 int main(){
 
-=======
-void printList(DoubleNode *head){ 
-	DoubleNode *cursor;
-	printf ("(");
-	cursor=head;
-	while (cursor != NULL) {
-	printf("%d",cursor->data); printf(" "); cursor=cursor->next;
-} 
-printf(")"); 
-}
-
-DoubleNode * insertLast(DoubleNode *head, double d) {
-	DoubleNode *tmp, *cursor;	
-	if (head==NULL) {
-		return insertFirst(head,d);} 
-	else{
-		cursor=head;
-		while (cursor->next != NULL){
-			cursor =cursor->next;} 
-		tmp= malloc(sizeof(DoubleNode));
-		tmp->data = d;
-		tmp->next = NULL;
-		cursor->next=tmp;
-		return head;
-	} 
-}
-
-DoubleNode *reverseListCon(DoubleNode *head){ 
-	DoubleNode *res, *tmp, *cell;
-	cell=head; 
-	res=NULL; 
-	while (cell != NULL) {
-		tmp= malloc(sizeof(DoubleNode)); 
-		tmp->data=cell->data; 
-		tmp->next=res;
-		res=tmp;
-		cell=cell->next; 
-	}
-	return res; 
-}
-
-void reverseList(DoubleNode * head){ 
-	DoubleNode *revChain, *chain, *cell; 
-	cell=head;
-	revChain=NULL; 
-	while (cell != NULL) {
-		chain=cell->next;
-//reverse next pointer in cell
-		cell->next=revChain;
-//add cell to revChain
-		revChain=cell;
-//set cell to next cell in chain
-		cell=chain; 
-	}
-//finalize
-	head=revChain; 
-}
-
-
-
-
-
-
-
-
-int main(){
-
-
-node *head;
-
-
-
-
-
-
->>>>>>> Stashed changes
 	return 0;
 }
