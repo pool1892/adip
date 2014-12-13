@@ -280,9 +280,9 @@ int main(){
 			delVect(vec3); 
 			delVect(vec4);
 			break;
-		default: 
-			//Easteregg
-			printf("Wenn dieser Text erscheint, ist irgendwas vermutlich richtig schief gelaufen.");
+		// default: 
+		// 	//Easteregg
+		// 	printf("Wenn dieser Text erscheint, ist irgendwas vermutlich richtig schief gelaufen.");
 	}
 	return 0;
 }
