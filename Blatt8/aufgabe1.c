@@ -150,6 +150,7 @@ int main(){
 	}
 	
 	printf("Laufzeitenvergleich\n");
+	/* SPOILER: DynArray ist viel schneller als DynArrayMin */
 	printf("%d mal insertSort bei DynArray:\t", WTF);
 	begin = clock();
 	/* fuege Zufallszahlen mit insertSort DynArray hinzu */
